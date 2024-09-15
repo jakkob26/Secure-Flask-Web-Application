@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h2>Welcome to Secure Flask App</h2>
+    <p>This is a demonstration of a secure web application using Flask.</p>
+    <p>Features include:</p>
+    <ul>
+        <li>Secure user authentication</li>
+        <li>Protection against common web vulnerabilities</li>
+        <li>Input validation</li>
+    </ul>
+    {% if 'user_id' in session %}
+        <p>You are logged in. <a href="{{ url_for('dashboard') }}">Go to Dashboard</a></p>
+    {% else %}
+        <p><a href="{{ url_for('login') }}">Login</a> or <a href="{{ url_for('register') }}">Register</a> to get started.</p>
+    {% endif %}
+{% endblock %}

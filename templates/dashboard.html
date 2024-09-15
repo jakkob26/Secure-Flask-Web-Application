@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h2>Welcome, {{ username }}!</h2>
+    <p>This is your secure dashboard.</p>
+    <p>Here you can view and manage your account information.</p>
+    <h3>Account Details:</h3>
+    <ul>
+        <li>Username: {{ username }}</li>
+        <li>Account created: [Date would be fetched from database]</li>
+    </ul>
+    <p><a href="{{ url_for('logout') }}">Logout</a></p>
+{% endblock %}
